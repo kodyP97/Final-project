@@ -236,10 +236,10 @@ function ent(s,W,H,T){const R=(x,y,w,h,c)=>{ix.fillStyle=c;ix.fillRect(x,y,w,h)}
  let g=ix.createLinearGradient(0,0,0,H);g.addColorStop(0,'#0a0f24');g.addColorStop(1,'#2a2f4a');R(0,0,W,H,g);
  for(let i=0;i<30;i++)E(rn(i)*W,rn(i+50)*H*.5,1,1,`rgba(255,255,255,${.4+.4*Math.sin(T/5+i)})`);
  E(W*.85,H*.2,H*.07,H*.07,'#e8e4c8');R(0,gy,W,H-gy,'#16210f');
- if(s===0){const bx=W*.3,bw=W*.4,by=H*.3;R(bx,by,bw,gy-by,'#6b6e78');ix.strokeStyle='rgba(0,0,0,.25)';for(let y=by;y<gy;y+=14){ix.beginPath();ix.moveTo(bx,y);ix.lineTo(bx+bw,y);ix.stroke()}
-  P([[bx-10,by],[W/2,H*.17],[bx+bw+10,by]],'#5a2a22');R(W/2-W*.06,gy-H*.36,W*.12,H*.36,'#6b4423');ix.fillStyle='#6b4423';ix.beginPath();ix.arc(W/2,gy-H*.36,W*.06,Math.PI,0);ix.fill();
-  for(let i=1;i<4;i++)R(W/2-W*.06+i*W*.03,gy-H*.36,1.5,H*.36,'rgba(0,0,0,.35)');R(W/2-W*.06,gy-H*.26,W*.12,5,'#2a2a2a');R(W/2-W*.06,gy-H*.1,W*.12,5,'#2a2a2a');E(W/2+W*.035,gy-H*.17,3,3,'#d9a520');
-  R(W/2-W*.05,gy-2,W*.1,2,'rgba(255,200,80,.8)');R(bx+W*.04,by+H*.12,W*.05,H*.1,'#1b1520');R(bx+bw-W*.09,by+H*.12,W*.05,H*.1,'#1b1520');R(W/2-W*.1,gy-4,W*.2,5,'#555');tor(bx-9*H/150,gy-H*.3);tor(bx+bw+9*H/150,gy-H*.3)}
+ if(s===0){const bw=Math.min(W*.6,H*.8),bx=W/2-bw/2,by=H*.3,dw=bw*.22,dh=Math.min(H*.3,dw*2.3),dr=dw/2;R(bx,by,bw,gy-by,'#6b6e78');ix.strokeStyle='rgba(0,0,0,.25)';for(let y=by;y<gy;y+=14){ix.beginPath();ix.moveTo(bx,y);ix.lineTo(bx+bw,y);ix.stroke()}
+  P([[bx-10,by],[W/2,H*.17],[bx+bw+10,by]],'#5a2a22');R(W/2-dr,gy-dh+dr,dw,dh-dr,'#6b4423');ix.fillStyle='#6b4423';ix.beginPath();ix.arc(W/2,gy-dh+dr,dr,Math.PI,0);ix.fill();
+  for(let i=1;i<4;i++)R(W/2-dr+i*dw/4,gy-dh+dr,1.5,dh-dr,'rgba(0,0,0,.35)');R(W/2-dr,gy-dh*.7,dw,5,'#2a2a2a');R(W/2-dr,gy-dh*.28,dw,5,'#2a2a2a');E(W/2+dr*.6,gy-dh*.45,Math.max(3,dr*.08),Math.max(3,dr*.08),'#d9a520');
+  R(W/2-dr*.8,gy-2,dw*.8,2,'rgba(255,200,80,.8)');R(bx+bw*.1,by+H*.1,bw*.12,H*.08,'#1b1520');R(bx+bw*.78,by+H*.1,bw*.12,H*.08,'#1b1520');R(W/2-dw,gy-4,dw*2,5,'#555');tor(bx-9*H/150,gy-H*.3);tor(bx+bw+9*H/150,gy-H*.3)}
  else if(s===1){P([[0,gy],[0,H*.5],[W*.2,H*.36],[W*.35,H*.2],[W*.5,H*.1],[W*.65,H*.2],[W*.8,H*.36],[W,H*.5],[W,gy]],'#3b3b44');
   for(let i=0;i<14;i++)E(rn(i+20)*W,H*.3+rn(i+40)*H*.4,10+rn(i)*14,6,'rgba(255,255,255,.05)');
   const c0=W/2,cw=W*.14;ix.beginPath();ix.moveTo(c0-cw,gy);ix.bezierCurveTo(c0-cw,gy-H*.62,c0+cw,gy-H*.62,c0+cw,gy);ix.closePath();
